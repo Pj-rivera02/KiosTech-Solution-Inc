@@ -1,0 +1,62 @@
+head {
+	border: solid;
+	border-color: #333;
+}
+
+body {
+	border: solid;
+	border-color: #333;
+}
+
+.container {
+	border: solid;
+	border-color: #333;
+}
+
+.nav {
+	display: flex;
+	justify-content: center;
+	background-color: #333;
+	padding: 10px;
+}
+
+.home {
+	border: solid;
+	border-color: #333;
+}
+
+.goal {
+	display : flex;
+	border: solid;
+	border-color: #333;
+}
+
+.mission {
+
+	border: solid;
+	border-color: #333;
+}
+
+.vision {
+
+	border: solid;
+	border-color: #333;
+}
+
+.history {
+
+	border: solid;
+	border-color: #333;
+}
+
+.org {
+
+	border: solid;
+	border-color: #333;
+}
+
+footer {
+
+	border: solid;
+	border-color: #333;
+}
