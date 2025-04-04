@@ -1,55 +1,185 @@
 <html>
-	<head>
-		<title></title>
-		<link rel="stylesheet" href="style.css">
-		
-		<div class="nav">
-			<a href="">Home</a>
-			<a href="">Mision & Vision</a>
-			<a href="">History</a>
-			<a href="">Organization</a>
-		</div>
-	</head>
-	<body>
-		<div class="home">
-			<img src="" alt="richard.jepg">
-			<h1>main</h1>
-			<p>sample intro</p>
-		</div>
-
-		<div class="goal">
-			<div class="mission">
-				<h1>Mission</h1>
-				<p>To empower business and elevate customer experiences by
-				designing, manufacturing, and supporting advanced kiosk solutions.
-				KioskTech is dedicated to providing reliable and intuitive self-service
-				technologies that enhance efficiency, reduce operational costs, 
-				and foster customer satisfaction. We are committed to continuous 
-				innovation, personalized client support, and a relentless focus 
-				on delivering value that helps our client thrive.</p>
-			</div>
-			<div class="vision">
-				<h1>Vision</h1>
-				<p>To be the leading provider of innovative and intuitive kiosk 
-				solutions, transforming the self-service landscape. At KioskTech, we
-				strive to empower our clients with reliable, adaptable, and 
-				forward-thinking solutions that optimize operations and drive 
-				sustainable growth.</p>
-			</div>
-		</div>
-
-		<div class="history">
-			<h1>History</h1>
-			<p>sample text</p>
-		</div>
-		
-		<div class="org">
-			<h1>Organization</h1>
-			<img src="" alt="">
-			<p>sample text</p>
-		</div>
-	</body>
-	<footer>
-		<h6>Copyright</h6>
-	</footer>
+ <head>
+  <title>
+   Kiosk Tech Solutions
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-teal-800 text-white">
+  <div class="container mx-auto p-4">
+   <!-- Header Section -->
+   <div class="text-center my-8">
+    <h1 class="text-4xl font-bold">
+     Welcome to Kiosk Tech Solutions.
+    </h1>
+    <p class="text-lg mt-2">
+     Powering Seamless Customer Experiences
+    </p>
+    <div class="mt-4">
+     <input class="p-2 rounded text-black" placeholder="Enter your email" type="email"/>
+     <button class="bg-black text-white p-2 rounded ml-2">
+      Subscribe
+     </button>
+    </div>
+   </div>
+   <!-- Products Section -->
+   <div class="text-center my-8">
+    <h2 class="text-3xl font-bold">
+     Our Products
+    </h2>
+    <p class="text-lg mt-2">
+     Explore our innovative kiosk solutions
+    </p>
+    <button class="bg-black text-white p-2 rounded mt-4">
+     View All Products
+    </button>
+   </div>
+   <div class="flex flex-wrap justify-center gap-8 my-8">
+    <div class="bg-white text-black p-4 rounded shadow-lg">
+     <img alt="Self-Service Kiosk" class="mx-auto" height="200" src="https://storage.googleapis.com/a1aa/image/Rd2UqOwg2B-ooccBSxXoaJB2rPFwrEshp0wEaapnXsw.jpg" width="200"/>
+     <h3 class="text-xl font-bold mt-4">
+      Self-Service Kiosk
+     </h3>
+     <p class="text-lg">
+      Starting at $299
+     </p>
+    </div>
+    <div class="bg-white text-black p-4 rounded shadow-lg">
+     <img alt="Digital Signage Kiosk" class="mx-auto" height="200" src="https://storage.googleapis.com/a1aa/image/fIdwm6bPIqdyEapv6fAZGCMwSh48FLgoV1J4p8tnK-I.jpg" width="200"/>
+     <h3 class="text-xl font-bold mt-4">
+      Digital Signage Kiosk
+     </h3>
+     <p class="text-lg">
+      Starting at $399
+     </p>
+    </div>
+    <div class="bg-white text-black p-4 rounded shadow-lg">
+     <img alt="Payment Kiosk" class="mx-auto" height="200" src="https://storage.googleapis.com/a1aa/image/vBpJ0cgsAur97LdPI_pQYXKDS42piN279M8Lbv-2V9U.jpg" width="200"/>
+     <h3 class="text-xl font-bold mt-4">
+      Payment Kiosk
+     </h3>
+     <p class="text-lg">
+      Starting at $499
+     </p>
+    </div>
+   </div>
+   <!-- Learn About Us Section -->
+   <div class="text-center my-8">
+    <h2 class="text-3xl font-bold">
+     Learn about us!
+    </h2>
+    <p class="text-lg mt-2">
+     Discover why we create this business
+    </p>
+    <button class="bg-black text-white p-2 rounded mt-4">
+     Learn More
+    </button>
+   </div>
+   <!-- Customer Support Section -->
+   <div class="flex justify-center items-center my-8">
+    <div class="bg-white text-black p-4 rounded shadow-lg flex items-center">
+     <img alt="Customer Support Icon" class="mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/FUyueFfMaF1v3XORXQtulS8qWwUKWuLU767Lj24nijY.jpg" width="100"/>
+     <div>
+      <h3 class="text-xl font-bold">
+       24/7 Customer Support
+      </h3>
+      <p class="text-lg">
+       Dedicated support team to assist you round the clock
+      </p>
+     </div>
+    </div>
+   </div>
+   <!-- Testimonials Section -->
+   <div class="text-center my-8">
+    <h2 class="text-3xl font-bold">
+     What Our Customers Say
+    </h2>
+    <p class="text-lg mt-2">
+     Read testimonials from our satisfied clients
+    </p>
+    <button class="bg-black text-white p-2 rounded mt-4">
+     View More Reviews
+    </button>
+   </div>
+   <div class="flex flex-wrap justify-center gap-8 my-8">
+    <div class="bg-white text-black p-4 rounded shadow-lg">
+     <div class="flex items-center mb-2">
+      <img alt="Customer 1" class="rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/zz378lRDeYkQBlGITCRL61ogteDruKmVu93thOUucqM.jpg" width="50"/>
+      <div>
+       <h3 class="text-xl font-bold">
+        Kenji Dela Cruz
+       </h3>
+       <div class="text-yellow-500">
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+       </div>
+      </div>
+     </div>
+     <p>
+      Fantastic kiosk products and exceptional customer service
+     </p>
+    </div>
+    <div class="bg-white text-black p-4 rounded shadow-lg">
+     <div class="flex items-center mb-2">
+      <img alt="Customer 2" class="rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/z_p7rkpDXg4uFdjzh3dcBBa6X3Hhd1vHixVd2LGRLkI.jpg" width="50"/>
+      <div>
+       <h3 class="text-xl font-bold">
+        Syra Ortega
+       </h3>
+       <div class="text-yellow-500">
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+       </div>
+      </div>
+     </div>
+     <p>
+      Highly recommend their kiosks, great value for money
+     </p>
+    </div>
+    <div class="bg-white text-black p-4 rounded shadow-lg">
+     <div class="flex items-center mb-2">
+      <img alt="Customer 3" class="rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/egEwDOnxVLROU2754MDxiguGY-2n9rwO_vaAmgxhivY.jpg" width="50"/>
+      <div>
+       <h3 class="text-xl font-bold">
+        Miguel Salcedo
+       </h3>
+       <div class="text-yellow-500">
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+       </div>
+      </div>
+     </div>
+     <p>
+      Easy to use and reliable kiosk solutions
+     </p>
+    </div>
+   </div>
+  </div>
+ </body>
 </html>

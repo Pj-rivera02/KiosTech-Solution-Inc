@@ -1,62 +1,107 @@
-head {
-	border: solid;
-	border-color: #333;
-}
-
 body {
-	border: solid;
-	border-color: #333;
+	background-color: #2c6d7a;
+	color: white;
+	font-family: Arial, sans-serif;
 }
 
 .container {
-	border: solid;
-	border-color: #333;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
 }
 
-.nav {
+.text-center {
+	text-align: center;
+}
+
+.my-8 {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.text-4xl {
+	font-size: 2.25rem;
+	font-weight: bold;
+}
+
+.text-3xl {
+	font-size: 1.875rem;
+	font-weight: bold;
+}
+
+.text-xl {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.text-lg {
+	font-size: 1.125rem;
+}
+
+.mt-2 {
+	margin-top: 0.5rem;
+}
+
+.mt-4 {
+	margin-top: 1rem;
+}
+
+.p-2 {
+	padding: 0.5rem;
+}
+
+.p-4 {
+	padding: 1rem;
+}
+
+.rounded {
+	border-radius: 0.25rem;
+}
+
+.bg-black {
+	background-color: black;
+}
+
+.text-black {
+	color: black;
+}
+
+.shadow-lg {
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.flex {
 	display: flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.justify-center {
 	justify-content: center;
-	background-color: #333;
-	padding: 10px;
 }
 
-.home {
-	border: solid;
-	border-color: #333;
+.items-center {
+	align-items: center;
 }
 
-.goal {
-	display : flex;
-	border: solid;
-	border-color: #333;
+.gap-8 {
+	gap: 2rem;
 }
 
-.mission {
-
-	border: solid;
-	border-color: #333;
+.mb-2 {
+	margin-bottom: 0.5rem;
 }
 
-.vision {
-
-	border: solid;
-	border-color: #333;
+.mr-4 {
+	margin-right: 1rem;
 }
 
-.history {
-
-	border: solid;
-	border-color: #333;
+.rounded-full {
+	border-radius: 9999px;
 }
 
-.org {
-
-	border: solid;
-	border-color: #333;
-}
-
-footer {
-
-	border: solid;
-	border-color: #333;
+.text-yellow-500 {
+	color: #ecc94b;
 }
