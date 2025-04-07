@@ -6,22 +6,45 @@
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
  </head>
- <body class="bg-teal-800 text-white">
+ <body class="text-white">
     <div class="container mx-auto p-4">
    <!-- Header Section -->
-   <div class="text-center my-8">
-    <h1 class="text-4xl font-bold">
-     Welcome to Kiosk Tech Solutions.
-    </h1>
-    <p class="text-lg mt-2">
+   <div class="flex flex-col items-center my-8">
+    <div class="absolute left-4 top-4">
+      <img src="logo.jpg" alt="KiosTech Solutions Logo" class="header-logo h-16 w-16 object-contain rounded-lg shadow-md border-2 border-white/20 hover:border-white/50 transition-all">
+    </div>
+    <div class="mb-4">
+      <h1 class="text-4xl font-bold">
+       Welcome to KioskTech Solutions.
+      </h1>
+    </div>
+    <p class="text-lg">
      Powering Seamless Customer Experiences
     </p>
-    <div class="mt-4">
-     <input class="p-2 rounded text-black" placeholder="Enter your email" type="email"/>
-     <button class="bg-black text-white p-2 rounded ml-2">
-      Subscribe
-     </button>
+    <form id="subscribeForm" class="mt-4 flex flex-col items-center">
+      <div class="relative w-full max-w-md">
+        <input id="emailInput" class="w-full p-3 pr-32 rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500" 
+               placeholder="Enter your email" type="email" required/>
+        <button type="submit" id="subscribeBtn" 
+                class="absolute right-1 top-1 bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded transition duration-300">
+          <span id="subscribeText">Subscribe</span>
+          <span id="subscribeSpinner" class="hidden ml-2">
+            <i class="fas fa-spinner fa-spin"></i>
+          </span>
+        </button>
+      </div>
+      <p class="mt-2 text-sm text-gray-300">Get the latest updates and offers</p>
+    </form>
+    <!-- Modal for subscription messages -->
+    <div id="subscribeModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+      <div class="bg-white text-black p-6 rounded-lg max-w-sm w-full">
+        <div id="modalContent" class="text-center"></div>
+        <button id="closeModal" class="mt-4 bg-teal-800 text-white px-4 py-2 rounded w-full">
+          Close
+        </button>
+      </div>
     </div>
    </div>
    <!-- Products Section -->
@@ -180,6 +203,105 @@
      </p>
     </div>
    </div>
+   
+   <!-- Client Inquiry Section -->
+   <div class="max-w-2xl mx-auto my-12 p-6 bg-white/10 rounded-lg backdrop-blur-sm">
+     <h2 class="text-3xl font-bold text-center mb-6">Client Inquiry</h2>
+     <form id="inquiryForm" class="space-y-4">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+         <div>
+           <label for="firstName" class="block text-sm font-medium mb-1">First Name</label>
+           <input type="text" id="firstName" name="firstName" required
+                  class="w-full p-3 rounded-lg bg-white/20 border border-white/30 focus:outline-none focus:ring-2 focus:ring-teal-500">
+         </div>
+         <div>
+           <label for="lastName" class="block text-sm font-medium mb-1">Last Name</label>
+           <input type="text" id="lastName" name="lastName" required
+                  class="w-full p-3 rounded-lg bg-white/20 border border-white/30 focus:outline-none focus:ring-2 focus:ring-teal-500">
+         </div>
+       </div>
+       <div>
+         <label for="email" class="block text-sm font-medium mb-1">Email</label>
+         <input type="email" id="email" name="email" required
+                class="w-full p-3 rounded-lg bg-white/20 border border-white/30 focus:outline-none focus:ring-2 focus:ring-teal-500">
+       </div>
+       <div>
+         <label for="phone" class="block text-sm font-medium mb-1">Phone Number</label>
+         <input type="tel" id="phone" name="phone"
+                class="w-full p-3 rounded-lg bg-white/20 border border-white/30 focus:outline-none focus:ring-2 focus:ring-teal-500">
+       </div>
+       <div>
+         <label for="message" class="block text-sm font-medium mb-1">Message</label>
+         <textarea id="message" name="message" rows="4" required
+                  class="w-full p-3 rounded-lg bg-white/20 border border-white/30 focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+       </div>
+       <button type="submit" 
+               class="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-3 px-4 rounded transition duration-300">
+         Submit Inquiry
+       </button>
+     </form>
+   </div>
+   
+   <!-- Footer Section -->
+   <footer class="bg-black/50 py-8 mt-12">
+     <div class="container mx-auto px-4">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+         <!-- Contact Us -->
+         <div>
+           <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+           <ul class="space-y-2">
+             <li class="flex items-center">
+               <i class="fas fa-map-marker-alt mr-2"></i>
+               <span>123 Tech Street, Silicon Valley, CA</span>
+             </li>
+             <li class="flex items-center">
+               <i class="fas fa-phone mr-2"></i>
+               <span>+1 (555) 123-4567</span>
+             </li>
+             <li class="flex items-center">
+               <i class="fas fa-envelope mr-2"></i>
+               <span>info@kiostechsolutions.com</span>
+             </li>
+           </ul>
+         </div>
+         
+         <!-- Quick Links -->
+         <div>
+           <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+           <ul class="space-y-2">
+             <li><a href="#" class="hover:text-teal-400 transition">Home</a></li>
+             <li><a href="#" class="hover:text-teal-400 transition">Products</a></li>
+             <li><a href="#" class="hover:text-teal-400 transition">About Us</a></li>
+             <li><a href="#" class="hover:text-teal-400 transition">Testimonials</a></li>
+           </ul>
+         </div>
+         
+         <!-- Social Media -->
+         <div>
+           <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+           <div class="flex space-x-4">
+             <a href="#" class="text-2xl hover:text-teal-400 transition">
+               <i class="fab fa-facebook"></i>
+             </a>
+             <a href="#" class="text-2xl hover:text-teal-400 transition">
+               <i class="fab fa-twitter"></i>
+             </a>
+             <a href="#" class="text-2xl hover:text-teal-400 transition">
+               <i class="fab fa-linkedin"></i>
+             </a>
+             <a href="#" class="text-2xl hover:text-teal-400 transition">
+               <i class="fab fa-instagram"></i>
+             </a>
+           </div>
+         </div>
+       </div>
+       
+       <!-- Copyright -->
+       <div class="border-t border-white/20 mt-8 pt-6 text-center text-sm">
+         <p>&copy; 2023 KiosTech Solutions Inc. All rights reserved.</p>
+       </div>
+     </div>
+   </footer>
   </div>
   <script src="script.js"></script>
  </body>

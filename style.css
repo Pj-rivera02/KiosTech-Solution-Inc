@@ -1,7 +1,23 @@
 body {
-	background-color: #2c6d7a;
+	background: linear-gradient(135deg, #7EC8E3 0%, #1E87F0 100%);
 	color: white;
 	font-family: Arial, sans-serif;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+/* Logo enhancements */
+.header-logo {
+	filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+	transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.header-logo:hover {
+	transform: scale(1.05);
+	filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
 .container {
