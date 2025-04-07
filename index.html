@@ -11,9 +11,28 @@
  <body class="text-white">
     <div class="container mx-auto p-4">
    <!-- Header Section -->
-   <div class="flex flex-col items-center my-8">
-    <div class="absolute left-4 top-4">
+   <div id="header" class="flex flex-col items-center my-8">
+    <div class="absolute left-4 top-4 flex items-center">
       <img src="logo.jpg" alt="KiosTech Solutions Logo" class="header-logo h-16 w-16 object-contain rounded-lg shadow-md border-2 border-white/20 hover:border-white/50 transition-all">
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex ml-8 space-x-6">
+        <a href="#header" class="nav-item px-3 py-2 rounded hover:bg-white/20 transition">Home</a>
+        <a href="#products" class="nav-item px-3 py-2 rounded hover:bg-white/20 transition">Products</a>
+        <a href="#about" class="nav-item px-3 py-2 rounded hover:bg-white/20 transition">About Us</a>
+      </div>
+      
+      <!-- Mobile Navigation Icon -->
+      <div class="nav-icon mt-4 md:hidden">
+        <button class="nav-toggle p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
+          <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="nav-menu hidden mt-2 bg-white/10 backdrop-blur-sm rounded-lg p-2 w-40">
+          <a href="#header" class="nav-item block px-3 py-2 rounded hover:bg-white/20 transition">Home</a>
+          <a href="#products" class="nav-item block px-3 py-2 rounded hover:bg-white/20 transition">Products</a>
+          <a href="#about" class="nav-item block px-3 py-2 rounded hover:bg-white/20 transition">About Us</a>
+        </div>
+      </div>
     </div>
     <div class="mb-4">
       <h1 class="text-4xl font-bold">
@@ -48,7 +67,7 @@
     </div>
    </div>
    <!-- Products Section -->
-   <div class="text-center my-8">
+   <div id="products" class="text-center my-8">
     <h2 class="text-3xl font-bold">
      Our Products
     </h2>
@@ -89,7 +108,7 @@
     </div>
    </div>
    <!-- Learn About Us Section -->
-   <div class="text-center my-8">
+   <div id="about" class="text-center my-8">
     <h2 class="text-3xl font-bold">
      Learn about us!
     </h2>

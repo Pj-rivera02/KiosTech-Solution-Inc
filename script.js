@@ -125,3 +125,53 @@ if (document.readyState === 'loading') {
 } else {
     init();
 }
+
+// Navigation Icon Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Initializing navigation');
+    
+    try {
+        // Toggle nav menu
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (!navToggle || !navMenu) {
+            console.error('Navigation elements not found');
+            return;
+        }
+
+        navToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            console.log('Toggle clicked');
+            navMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && e.target !== navToggle) {
+                navMenu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling for nav items
+        document.querySelectorAll('.nav-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Nav item clicked:', this.textContent);
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    navMenu.classList.add('hidden');
+                } else {
+                    console.error('Target element not found:', targetId);
+                }
+            });
+        });
+
+        console.log('Navigation setup complete');
+    } catch (error) {
+        console.error('Navigation setup error:', error);
+    }
+});
