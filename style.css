@@ -25,7 +25,8 @@ body {
 }
 
 .container {
-	max-width: 1200px;
+	width: 90%; /* Adjusted for better responsiveness */
+	max-width: 1200px; /* Retain max-width for larger screens */
 	margin: 0 auto;
 	padding: 20px;
 }
