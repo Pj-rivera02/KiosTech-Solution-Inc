@@ -39,12 +39,14 @@ function init() {
                 }
             });
         }
-
+    
         // Handle form submission
         subscribeForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const email = emailInput.value.trim();
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            console.log('Form submitted with email:', email);
             
             // Add loading state
             subscribeText.textContent = 'Sending...';
@@ -52,15 +54,41 @@ function init() {
             subscribeBtn.disabled = true;
             
             if (emailRegex.test(email)) {
-                // Simulate API call
-                setTimeout(() => {
-                    showModal('Thank you for subscribing!', true);
+                console.log('Email format valid, preparing to send');
+                
+                // Create FormData
+                const formData = new FormData();
+                formData.append('email', email);
+                
+                console.log('Sending request to subscribe.php');
+                
+                // Send to PHP with explicit error handling
+                fetch('subscribe.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    console.log('Response status:', response.status);
+                    return response.text();
+                })
+                .then(data => {
+                    console.log('Server response:', data);
+                    showModal(data === "Subscription successful" ? 'Thank you for subscribing!' : data, 
+                              data === "Subscription successful" || data === "You're already subscribed!");
                     emailInput.value = '';
                     subscribeText.textContent = 'Subscribe';
                     subscribeSpinner.classList.add('hidden');
                     subscribeBtn.disabled = false;
-                }, 1500);
+                })
+                .catch(error => {
+                    console.error('Error submitting form:', error);
+                    showModal('An error occurred. Please try again later.', false);
+                    subscribeText.textContent = 'Subscribe';
+                    subscribeSpinner.classList.add('hidden');
+                    subscribeBtn.disabled = false;
+                });
             } else {
+                console.log('Email validation failed');
                 showModal('Please enter a valid email address', false);
                 subscribeText.textContent = 'Subscribe';
                 subscribeSpinner.classList.add('hidden');
@@ -91,30 +119,51 @@ function init() {
             e.preventDefault();
             
             const formData = {
-                firstName: document.getElementById('firstName').value.trim(),
-                lastName: document.getElementById('lastName').value.trim(),
+                firstName: document.getElementById('first_name').value.trim(),
+                lastName: document.getElementById('last_name').value.trim(),
                 email: document.getElementById('email').value.trim(),
                 phone: document.getElementById('phone').value.trim(),
                 message: document.getElementById('message').value.trim()
             };
-
+        
             // Validate required fields
             if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
                 showModal('Please fill in all required fields', false);
                 return;
             }
-
+        
             // Validate email format
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(formData.email)) {
                 showModal('Please enter a valid email address', false);
                 return;
             }
-
-            // Simulate form submission
+        
+            // Create FormData object for sending to PHP
+            const phpFormData = new FormData();
+            phpFormData.append('first_name', formData.firstName);
+            phpFormData.append('last_name', formData.lastName);
+            phpFormData.append('email', formData.email);
+            phpFormData.append('phone', formData.phone);
+            phpFormData.append('message', formData.message);
+        
+            // Send data to PHP script
+            fetch('submit.php', {
+                method: 'POST',
+                body: phpFormData
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Server response:', data);
+                showModal('Thank you for your inquiry! We will contact you shortly.', true);
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+                showModal('An error occurred. Please try again later.', false);
+            });
+        
             console.log('Inquiry submitted:', formData);
-            showModal('Thank you for your inquiry! We will contact you shortly.', true);
-            this.reset();
         });
     }
 }
